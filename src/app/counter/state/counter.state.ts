@@ -1,7 +1,9 @@
 export interface counterState{
-    counter:number
+    counter:number,
+    channelName: String
 }
 
 export const initialState:counterState ={
-    counter :50
+    counter :50,
+    channelName:"Testing Demo"
 }
