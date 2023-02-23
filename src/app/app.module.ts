@@ -9,6 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { counterReducer } from './counter/state/counter.reducer';
+import { CounterInputComponent } from './counter/counter-input/counter-input.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,10 +19,12 @@ import { counterReducer } from './counter/state/counter.reducer';
     AppComponent,
     CounterComponent,
     CounterOutputComponent,
-    CounterButtonsComponent
+    CounterButtonsComponent,
+    CounterInputComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     StoreModule.forRoot({counter:counterReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
    
