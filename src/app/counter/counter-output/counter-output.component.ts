@@ -1,4 +1,4 @@
-import { Store } from '@ngrx/store/public_api';
+import { Store} from '@ngrx/store';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

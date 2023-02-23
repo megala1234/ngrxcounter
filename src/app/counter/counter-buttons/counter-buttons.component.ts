@@ -1,6 +1,6 @@
 import { increment,decrement, reset } from './../state/counter.actions';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Store } from '@ngrx/store/public_api';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-counter-buttons',
