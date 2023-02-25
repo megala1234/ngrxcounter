@@ -1,0 +1,27 @@
+<div class="row my-6">
+    <div class="col-md-12">
+        <h3>Add Post</h3>
+        <hr/>
+        <form [formGroup]="postform" (ngSubmit)="addPostForm()">
+            <div class="mb-3">
+                <label>Title:</label>
+                <input type="text" formControlName="title" />
+                <div *ngIf="postform.get('title')?.dirty && postform.get('title')?.errors">
+                        <span *ngIf="!postform.get('title')" style="color:red">Title is Required</span>
+                        
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Description:</label>
+                
+                <textarea formControlName="description" ></textarea>
+                <div *ngIf="postform.get('description')?.touched && postform.get('description')?.invalid">
+                    <span style="color:red">Description is Required</span>
+                </div>
+            </div>
+            <div class="mb-3">
+               <button type="submit" [disabled]="!postform.valid" > Add Post</button>
+            </div>
+        </form>
+    </div>
+</div>

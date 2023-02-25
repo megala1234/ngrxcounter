@@ -1,3 +1,4 @@
+import { appReducer } from './store/app.state';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { counterReducer } from './counter/state/counter.reducer';
 import { CounterInputComponent } from './counter/counter-input/counter-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { PostsListComponent } from './posts/posts-list/posts-list.component';
+import { AddPostComponent } from './posts/add-post/add-post.component';
+import { EditpostComponent } from './posts/editpost/editpost.component';
 
 
 
@@ -20,12 +27,19 @@ import { FormsModule } from '@angular/forms';
     CounterComponent,
     CounterOutputComponent,
     CounterButtonsComponent,
-    CounterInputComponent
+    CounterInputComponent,
+    HomeComponent,
+    HeaderComponent,
+    PostsListComponent,
+    AddPostComponent,
+    EditpostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({counter:counterReducer}),
+    AppRoutingModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
    
   ],
