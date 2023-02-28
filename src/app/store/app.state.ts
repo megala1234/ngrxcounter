@@ -1,15 +1,13 @@
-import { counterReducer } from './../counter/state/counter.reducer';
-import { counterState } from "../counter/state/counter.state";
-import { PostsState } from "../posts/store/posts.state";
-import { postsReducer } from '../posts/store/posts.reducer';
+import { sharedReducer } from "./shared/shared.reducer"
+import { SHARED_STATE_NAME } from "./shared/shared.selector"
+import { Shared } from "./shared/shared.state"
+
 
 
 export interface AppState{
-    counter:counterState,
-    posts:PostsState
+  [SHARED_STATE_NAME]:Shared
 }
 
 export const appReducer = {
-    counter:counterReducer,
-    posts:postsReducer
+  [SHARED_STATE_NAME]:sharedReducer
 }

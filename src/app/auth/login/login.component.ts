@@ -1,3 +1,4 @@
+import { setloading } from './../../store/shared/shared.actions';
 import { loginStart } from './../store/auth.actions';
 import { AppState } from './../../store/app.state';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   loginSubmit(){
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
+    this.store.dispatch(setloading({status:true}))
     this.store.dispatch(loginStart({email,password}))
   }
 
