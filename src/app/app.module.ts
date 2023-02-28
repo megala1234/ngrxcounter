@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule} from '@angular/common/http'
 
 
 
@@ -30,6 +32,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
    
   ],

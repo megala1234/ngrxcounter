@@ -2,7 +2,7 @@
     <div class="col-md-6 offset-md-3">
       <h3>Login</h3>
       <hr />
-      <form [formGroup]="loginForm">
+      <form [formGroup]="loginForm" (submit)="loginSubmit()">
         <div class="mb-3">
           <label>Email</label>
           <input type="text" class="form-control" formControlName="email" />
@@ -33,13 +33,7 @@
         </div>
   
         <div class="mb-3">
-          <button
-            type="submit"
-            class="btn btn-primary"
-            [disabled]="!loginForm.valid"
-          >
-            Login
-          </button>
+          <button type="submit" class="btn btn-primary"[disabled]="!loginForm.valid" > Login</button>
         </div>
       </form>
     </div>
