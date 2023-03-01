@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   isAuthenication!:Observable<Boolean>;
   ngOnInit(): void {
 
-    this.isAuthenication =  this.store.select(getAuthenticatedState)
+    this.isAuthenication  =  this.store.select(getAuthenticatedState)
 
   }
 
