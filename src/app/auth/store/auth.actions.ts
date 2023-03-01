@@ -1,3 +1,4 @@
+import { Shared } from './../../store/shared/shared.state';
 import { AuthFormat } from './../../models/authFormat.model';
 import { createAction, props } from '@ngrx/store';
 export const LOGIN_START = '[auth page] login start';
@@ -8,4 +9,4 @@ export const loginStart = createAction(LOGIN_START, props<{email:string,password
 
 export const loginSuccess = createAction(LOGIN_SUCCESS, props<{userData:AuthFormat}>());
 
-export const loginError = createAction(LOGIN_ERROR)
+export const loginError = createAction(LOGIN_ERROR,props<{geterrormsg:string}>())

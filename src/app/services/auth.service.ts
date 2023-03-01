@@ -24,4 +24,15 @@ export class AuthService{
             return userFormat;
     }
 
+    getErrorMsgFormat(error:string){
+        switch(error){
+            case 'EMAIL_NOT_FOUND':
+                return 'Email Not Found';
+            case 'INVALID_PASSWORD':
+                return 'Invalid Password';
+            default:
+                return 'Something Went Wrong.Please Try again';
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-import { getLoading } from './store/shared/shared.selector';
+import { getLoading, geterrormsg } from './store/shared/shared.selector';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -13,11 +13,14 @@ export class AppComponent implements OnInit {
   title = 'ngrxcounter';
 
   showLoading!:Observable<Boolean>;
+  errorString!:Observable<String>;
 
   constructor(private store: Store<AppState>){}
 
   ngOnInit(){
 
    this.showLoading = this.store.select(getLoading);
+   this.errorString = this.store.select(geterrormsg);
+
   }
 }
